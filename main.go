@@ -3,59 +3,37 @@ package main
 import "fmt"
 
 func main() {
-	// // Strings
-	// var nameOne string = "John"
-	// var nameTwo = "Sally"
-	// var nameThree string
+	// Arrays, always a fixed size and type
+	var ages [3]int = [3]int{20, 25, 30}
+	var num = [5]int{1, 2, 3, 4, 5}
 
- 	// fmt.Println(nameOne, nameTwo, nameThree)
+	name := [4]string{"John", "Paul", "George", "Ringo"}
 
-	// nameOne = "Michael"
-	// nameThree = "Jennifer"
+	// change value of name array
+	name[1] = "Bob"
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(ages, len(ages))
+	fmt.Println(num, len(num))
+	fmt.Println(name, len(name))
 
-	// // Integers
-	// var ageOne int = 20
-	// var ageTwo = 30
-	// ageThree := 40 
+	// Slices	- use arrays under the hood
+	var scores = []int{100, 50, 60}
+	scores[2] = 25
+	
+	fmt.Println(scores, len(scores))
 
-	// fmt.Println(ageOne, ageTwo, ageThree)
+	var appendedSlice = append(scores, 85)
+	fmt.Println(appendedSlice, len(appendedSlice))
 
-	// // Bits & Memory
-	// var numOne int8 = 25
-	// var numTwo int8 = -128
-	// var numThree uint = 25
+	fmt.Println(scores, len(scores))
 
-	// fmt.Println(numOne, numTwo, numThree)
+	scores = append(scores, 85)
+	fmt.Println(scores, len(scores))
 
-	// // Floats
-	// var scoreOne float32 = 25.98
-	// var scoreTwo float64 = 356789.123456789
-	// scoreThree := 1.5
+	// Slice ranges
+	rangeOne := name[1:3]
+	rangeTwo := name[2:]
+	rangeThree := name[:3]
 
-	// fmt.Println(scoreOne, scoreTwo, scoreThree)
-
-	age := 25
-	name := "Capo"
-
-	// Print Type
-	fmt.Print("Hello, \n")
-	fmt.Print("Capo! \n")
-
-	// Print Line
-	fmt.Println("Hello, Capo!")
-	fmt.Println("Goodbye, Capo!")
-	fmt.Println("My age is", age, "and my name is", name)
-
-	// Printf (formatted strings)
-	fmt.Printf("My age is %v and my name is %v \n", age, name)
-	fmt.Printf("My age is %q and my name is %q \n", age,name)
-	fmt.Printf("age is of type %T \n", name)
-	fmt.Printf("You scored %f points! \n", 225.55)
-	fmt.Printf("You scored %0.1f points! \n", 225.55)
-
-	// Sprintf (save formatted strings)
-	var str = fmt.Sprintf("My age is %v and my name is %v \n", age, name)
-	fmt.Println("The saved string is:", str)	
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
 }
