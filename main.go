@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	// Arrays, always a fixed size and type
+	// Arrays, always a fixed size and type which means you can't change the size of the array
 	var ages [3]int = [3]int{20, 25, 30}
 	var num = [5]int{1, 2, 3, 4, 5}
 
